@@ -14,7 +14,8 @@ class Rectangle extends Forme {
         $this->point = $point;
         $this->width = $width;
         $this->height = $height;
-        $this->setCouleur($couleur);
+        parent::__construct($couleur);//appel proprieter parent
+
     }
 
     public function getPoint(): Point {
@@ -27,6 +28,7 @@ class Rectangle extends Forme {
 
     public function getHeight(): float {
         return $this->height;
+
     }
 }
 

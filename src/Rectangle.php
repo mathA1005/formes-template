@@ -6,15 +6,15 @@ class Rectangle extends Forme {
 
 
 
-    private $point;
-    private $width;
-    private $height;
+    private point $point;
+    private float $width;
+    private float $height;
 
     public function __construct(Point $point, float $width, float $height, string $couleur = '#000000') {
+        parent::__construct($couleur);
         $this->point = $point;
         $this->width = $width;
         $this->height = $height;
-        parent::__construct($couleur);//appel proprieter parent
 
     }
 

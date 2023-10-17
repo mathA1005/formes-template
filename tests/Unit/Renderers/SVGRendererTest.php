@@ -9,14 +9,14 @@ use Opmvpc\Formes\Rectangle;
 use Opmvpc\Formes\Renderers\SVGRenderer;
 
 it('can render a canvas', function () {
-    $canvas = new Canvas(500, 500);
+    $canvas = new Canvas(500, 500,);
     $renderer = new SVGRenderer($canvas);
 
     $this->assertEquals('<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" style="fill: #FFFFFF"><rect x="0" y="0" width="500" height="500" /></svg>', $renderer->render());
 });
 
 it('can render a canvas with a line', function () {
-    $canvas = new Canvas(500, 500);
+    $canvas = new Canvas(500, 500,);
     $canvas->add(new Ligne(new Point(1, 1), new Point(1, 500)));
     $renderer = new SVGRenderer($canvas);
 
@@ -24,7 +24,7 @@ it('can render a canvas with a line', function () {
 });
 
 it('can render a canvas with a line and a rectangle', function () {
-    $canvas = new Canvas(500, 500);
+    $canvas = new Canvas(500, 500,);
     $canvas->add(new Ligne(new Point(1, 1), new Point(1, 500)));
     $canvas->add(new Rectangle(new Point(50, 50), 250, 400));
     $renderer = new SVGRenderer($canvas);
@@ -33,7 +33,7 @@ it('can render a canvas with a line and a rectangle', function () {
 });
 
 it('can render a canvas with a line, a rectangle and a circle', function () {
-    $canvas = new Canvas(500, 500);
+    $canvas = new Canvas(500, 500,);
     $canvas->add(new Ligne(new Point(1, 1), new Point(1, 500), '#0000FF'));
     $canvas->add(new Rectangle(new Point(50, 50), 250, 400, '#FF0000'));
     $canvas->add(new Cercle(new Point(250, 250), 150, '#00FF00'));
@@ -44,7 +44,7 @@ it('can render a canvas with a line, a rectangle and a circle', function () {
 });
 
 it('can render a red triangle', function () {
-    $canvas = new Canvas(500, 500);
+    $canvas = new Canvas(500, 500,);
     $canvas->add(new Polygone([
         new Point(1, 1),
         new Point(1, 500),
@@ -56,7 +56,7 @@ it('can render a red triangle', function () {
 });
 
 it('can render a yellow star', function () {
-    $canvas = new Canvas(500, 500);
+    $canvas = new Canvas(500, 500,);
     $canvas->add(new Polygone([
         new Point(250, 0),
         new Point(300, 200),
@@ -90,6 +90,6 @@ it('can save svg in file', function () {
     ], '#FFFF00'));
     $renderer = new SVGRenderer($canvas);
 
-    $renderer->save(__DIR__.'./img/test.svg');
-    $this->assertFileExists(__DIR__.'./img/test.svg');
+    $renderer->save(__DIR__.'/img/test.svg');
+    $this->assertFileExists(__DIR__.'/img/test.svg');
 });

@@ -31,45 +31,56 @@ class SVGRenderer implements Renderer
         $doc->setStyle('fill', $this->canvas->getCouleur());
         $doc->addChild($square);
 
-        //  formes
         foreach ($this->canvas->getFormes() as $forme) {
-
- if(get_class($forme) === Rectangle::class) {
-     $rectangle= new SVGRect($forme->getPoint()->getX(), $forme->getPoint()->getY(), $forme->getWidth(), $forme->getHeight(), $forme->getCouleur());
-$rectangle->setStyle('fill', $forme->getCouleur());
-     $doc->addChild($rectangle);
- }
-        elseif (get_class($forme) === Cercle::class) {
-                //  cercle
-                $circle = new SVGCircle($forme->getCentre()->getX(), $forme->getCentre()->getY(), $forme->getRayon());
+            if ($forme instanceof Rectangle) {
+                $rect = new SVGRect(
+                    $forme->getPoint()->getX(),
+                    $forme->getPoint()->getY(),
+                    $forme->getWidth(),
+                    $forme->getHeight(),
+                    $forme->getCouleur()
+                );
+                $rect->setStyle('fill', $forme->getCouleur());
+                $doc->addChild($rect);
+            } elseif ($forme instanceof Cercle) {
+                $circle = new SVGCircle(
+                    $forme->getCentre()->getX(),
+                    $forme->getCentre()->getY(),
+                    $forme->getRayon(),
+                    $forme->getCouleur()
+                );
                 $circle->setStyle('fill', $forme->getCouleur());
                 $doc->addChild($circle);
-
-            }  elseif (get_class($forme) === Ligne::class) {
-                // Rendu ligne
+            } elseif ($forme instanceof Ligne) {
                 $line = new SVGLine(
-                    $forme->getPoint1()->getX(), $forme->getPoint1()->getY(),
-                    $forme->getPoint2()->getX(), $forme->getPoint2()->getY()
+                    $forme->getPoint1()->getX(),
+                    $forme->getPoint1()->getY(),
+                    $forme->getPoint2()->getX(),
+                    $forme->getPoint2()->getY()
                 );
-                $line->setStyle('stroke', $forme->getCouleur()); // Utilisez 'stroke' au lieu de 'fill'
+                $line->setStyle('fill', $forme->getCouleur());
                 $doc->addChild($line);
-            //  polygone
-            } elseif (get_class($forme) === Polygone::class) {
-                $points = [];
-                foreach ($forme->getPoints() as $point) {
-                    $points[] = [$point->getX(), $point->getY()];
+            } elseif ($forme instanceof Polygone) {
+                $polyArray = [];
+                foreach ($forme->getPoints() as $mesPoints) {
+                    $polyArray[] = [$mesPoints->getX(), $mesPoints->getY()];
                 }
-                $polygon = new SVGPolygon($points);
+
+                $polygon = new SVGPolygon();
+                foreach ($polyArray as $point) {
+                    $polygon->addPoint($point[0], $point[1]);
+                }
+
                 $polygon->setStyle('fill', $forme->getCouleur());
                 $doc->addChild($polygon);
             }
         }
-
         return $image->toXMLString();
     }
 
     public function save(string $path): void
     {
-        file_put_contents($path, $this->render());
+        $svgContent= $this->render();
+        file_put_contents($path, $svgContent);
     }
 }

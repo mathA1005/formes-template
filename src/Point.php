@@ -3,8 +3,8 @@
 namespace Opmvpc\Formes;
 class Point
 {
-    private $x;
-    private $y;
+    private float $x;
+    private float $y;
 
     public function __construct(float $x, float $y)
     {

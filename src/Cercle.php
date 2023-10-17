@@ -9,7 +9,7 @@ class Cercle extends Forme {
     public function __construct(Point $centre, float $rayon, string $couleur = '#000000') {
         $this->centre = $centre;
         $this->rayon = $rayon;
-        $this->setCouleur($couleur);
+        parent::__construct($couleur);
     }
 
     public function getRayon(): float {

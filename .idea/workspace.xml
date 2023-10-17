@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16445a31-974b-4fa2-86df-f4ed68970941" name="Changes" comment="commit">
+    <list default="true" id="16445a31-974b-4fa2-86df-f4ed68970941" name="Changes" comment="commit cours renderer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Canvas.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Canvas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cercle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cercle.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Forme.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Forme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ligne.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ligne.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Point.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polygone.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polygone.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Rectangle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rectangle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Renderers/JPGRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/JPGRenderer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Renderers/SVGRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Renderers/SVGRenderer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Renderers/JPGRendererTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Renderers/JPGRendererTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Renderers/SVGRendererTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Renderers/SVGRendererTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +128,8 @@
       <workItem from="1696600013243" duration="3675000" />
       <workItem from="1696938172146" duration="9949000" />
       <workItem from="1697196709845" duration="1516000" />
-      <workItem from="1697198782860" duration="7366000" />
+      <workItem from="1697198782860" duration="13129000" />
+      <workItem from="1697537259573" duration="4056000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1697196772307</created>
@@ -130,7 +138,21 @@
       <option name="project" value="LOCAL" />
       <updated>1697196772307</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit cours renderer">
+      <created>1697223264705</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697223264705</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commit cours renderer">
+      <created>1697223273725</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697223273725</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +173,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="comit" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="commit cours renderer" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit cours renderer" />
   </component>
 </project>

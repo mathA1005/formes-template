@@ -1,15 +1,17 @@
 <?php
 namespace Opmvpc\Formes;
 
-class Canvas extends Forme {
-    private $width;
-    private $height;
-    private $formes = [];
+class Canvas {
+    private float $width;
+    private float $height;
+    private array $formes;
+    private string $couleur;
 
-    public function __construct(float $width, float $height, string $couleur = '#FFFFFF') {
+    public function __construct(float $width, float $height, string $couleur = "#FFFFFF") {
         $this->width = $width;
         $this->height = $height;
-        $this->setCouleur($couleur);
+        $this->formes = [];
+        $this->couleur = $couleur;
     }
 
     public function getWidth(): float {
@@ -24,15 +26,11 @@ class Canvas extends Forme {
         return $this->formes;
     }
 
-    public function add(Forme $forme) {
-        $this->formes[] = $forme;
-    }
-
-    public function setCouleur(string $couleur) {
-        $this->couleur = $couleur;
-    }
-
     public function getCouleur(): string {
         return $this->couleur;
+    }
+
+    public function add(Forme $forme): void {
+        $this->formes[] = $forme;
     }
 }

@@ -9,9 +9,6 @@ abstract class Forme {
         $this->couleur = $couleur;
     }
 
- /*  public function setCouleur(string $couleur) {
-      $this->couleur = $couleur;
-    }*/
 
     public function getCouleur(): string {
         return $this->couleur;
